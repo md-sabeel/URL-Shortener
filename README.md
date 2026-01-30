@@ -19,3 +19,19 @@ A modern and attractive URL Shortener built using **HTML, CSS, and JavaScript** 
 - JavaScript
 
 ## 📂 Folder Structure
+
+url-shortener/
+│── index.html
+│── style.css
+│── script.js
+│── README.md
+
+
+## 📸 Preview
+Add a screenshot here
+
+## 🧑‍💻 Author
+**Mohammed Sabeel**
+
+## 📜 License
+Free to use
