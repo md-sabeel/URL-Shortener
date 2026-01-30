@@ -28,7 +28,8 @@ url-shortener/
 
 
 ## 📸 Preview
-Add a screenshot here
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/859ff4f4-de6e-499d-87de-d74727195f0d" />
+
 
 ## 🧑‍💻 Author
 **Mohammed Sabeel**
