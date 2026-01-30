@@ -1,41 +1,45 @@
 async function shortenUrl() {
-    const longUrl = document.getElementById("longUrl").value;
+    const longUrl = document.getElementById("longUrl").value.trim();
     const resultBox = document.getElementById("result");
     const shortUrlInput = document.getElementById("shortUrl");
 
     if (!longUrl) {
-        showToast("Please enter a URL");
+        showToast("Please enter a valid URL");
         return;
     }
 
     try {
-        const res = await fetch(
-            `https://api.shrtco.de/v2/shorten?url=${longUrl}`
-        );
-        const data = await res.json();
+        const response = await fetch("https://cleanuri.com/api/v1/shorten", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: new URLSearchParams({ url: longUrl })
+        });
 
-        if (data.ok) {
-            shortUrlInput.value = data.result.full_short_link;
-            resultBox.style.display = "flex";
-            showToast("URL shortened successfully!");
+        const data = await response.json();
+
+        if (data.result_url) {
+            shortUrlInput.value = data.result_url;
+            resultBox.classList.remove("hidden");
+            showToast("URL shortened successfully ✅");
         } else {
-            showToast("Invalid URL");
+            showToast("Invalid URL ❌");
         }
-    } catch (err) {
-        showToast("Something went wrong");
+    } catch {
+        showToast("Something went wrong ❌");
     }
 }
 
 function copyUrl() {
     const shortUrl = document.getElementById("shortUrl");
-    shortUrl.select();
     navigator.clipboard.writeText(shortUrl.value);
-    showToast("Copied to clipboard!");
+    showToast("Copied to clipboard 📋");
 }
 
 function showToast(message) {
     const toast = document.getElementById("toast");
-    toast.innerText = message;
+    toast.textContent = message;
     toast.style.opacity = "1";
 
     setTimeout(() => {
