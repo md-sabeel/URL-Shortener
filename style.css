@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    padding: 20px;
+    color: #fff;
+    font-size: 22px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+/* Main */
+.container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: fadeIn 0.6s ease;
+}
+
+.card h2 {
+    margin-bottom: 20px;
+}
+
+.card input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+.card button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: #00e0ff;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.card button:hover {
+    background: #00bcd4;
+}
+
+/* Result */
+.result {
+    display: none;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+.result input {
+    flex: 1;
+}
+
+.copy {
+    width: auto;
+    padding: 10px 15px;
+}
+
+/* Footer */
+footer {
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Toast */
+#toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #333;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

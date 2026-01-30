@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <h1>🔗 Shortify</h1>
+</nav>
+
+<!-- Main -->
+<main class="container">
+    <div class="card">
+        <h2>Shorten Your URL</h2>
+        <input type="url" id="longUrl" placeholder="Enter long URL..." />
+        <button onclick="shortenUrl()">Shorten</button>
+
+        <div class="result" id="result">
+            <input type="text" id="shortUrl" readonly />
+            <button class="copy" onclick="copyUrl()">Copy</button>
+        </div>
+    </div>
+</main>
+
+<!-- Toast -->
+<div id="toast"></div>
+
+<!-- Footer -->
+<footer>
+    © 2026 Shortify. All rights reserved.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
